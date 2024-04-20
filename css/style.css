@@ -192,7 +192,24 @@ a.current{
   visibility: hidden;
 }
 
+.close-btn {
+  cursor: pointer;
+  background-color: #E7E9FC;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 24px 24px 0px 360px;
+  padding-bottom: 6px;  
 
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  background-color: #404BBF;
+  fill: white;
+}
 
 .modal-title {
   font-weight: 500;
@@ -224,25 +241,15 @@ a.current{
 .modal-label-checkbox {
   display: flex;
   align-items:center ;
-  gap: 8px;
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.04em;
   color: rgba(46, 47, 66, 0.4);
-  margin-left: 24px;
+
   height: 16px;
   width: 360px;
   margin-top: 16px;
   margin-bottom: 2px;
-  text-align: center;
-}
-
-input[type="checkbox"]:not(:checked) {
-  appearance: none;
-  width: 16px;
-  height: 16px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  border-radius: 2px;
 }
 
 .modal-input {
@@ -305,20 +312,53 @@ textarea::placeholder {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.checkbox {
+
+.real-checkbox {
+  display: none;
+}
+
+.fake-checkbox {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.fake-checkbox::before {
+  content: "";
   display: block;
   width: 16px;
   height: 16px;
+  margin-right: 8px; 
+  cursor: pointer;
+  background-image: url("../images/checkbox.svg"); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform : scale(0);
+  border-radius: 2px;
+
+}
+
+.real-checkbox:checked + .fake-checkbox::before {
+  transform : scale(1);
+}
+
+.real-checkbox:checked + .fake-checkbox{
+  border:0;
 }
 
 textarea:focus{
   outline: 1px solid var(--primary-iris-color);
-  border:0;
 }
 
 .modal-link {
   color: var(--primary-iris-color);
   text-decoration: underline;
+  padding-left: 4px;
 }
 
 .modal-button-send {
@@ -385,25 +425,6 @@ h1.studio {
   cursor: pointer;
   padding: 16px 32px 16px 32px;
   border: none;
-}
-
-.close-btn {
-  cursor: pointer;
-  background-color: #E7E9FC;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 24px 24px 0px 360px;
-  padding-bottom: 6px;  
-
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.close-btn:hover,
-.close-btn:focus {
-  background-color: #404BBF;
-  fill: white;
 }
 
 .features-flex {
