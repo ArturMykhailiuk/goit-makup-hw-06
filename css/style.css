@@ -679,7 +679,6 @@ span.footer-logo {
   letter-spacing: 0.02em;
   color: #f4f4fd;
   padding-top: 24px;
-  margin-bottom: 16px;
 }
 .footer-social-link {
   display: inline-block;
@@ -699,6 +698,7 @@ span.footer-logo {
     display: flex;
     justify-content: center;
     gap: 16px;
+    margin-top: 16px;
   }
 
  .footer-social-link:hover{
@@ -708,6 +708,7 @@ span.footer-logo {
  .footer-form {
   display: flex;
   gap: 24px;
+  margin-top: 16px;
  }
 
 .footer-input {
