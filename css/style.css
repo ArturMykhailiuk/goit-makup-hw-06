@@ -29,6 +29,7 @@ body {
 
 }
 
+
 .container {
   width: 1158px;
   margin-left: auto;
@@ -313,42 +314,43 @@ textarea::placeholder {
 }
 
 
-.real-checkbox {
-  display: none;
+
+.input-check:checked ~ .check-empty {
+  background-color: var(--primary-iris-color);
+  border: none;
+  fill: #FFFFFF;
+}
+.input-check:focus  ~ .check-empty {
+  border-color: #404BBF;
 }
 
-.fake-checkbox {
-  display: inline-block;
+.input-check-text {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8E8F99;
+}
+
+.check-empty {
   width: 16px;
   height: 16px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 2px;
-  margin-right: 8px;
-  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
+}
+.check-field {
+  margin-left: 24px;
 }
 
-.fake-checkbox::before {
-  content: "";
-  display: block;
-  width: 16px;
-  height: 16px;
-  margin-right: 8px; 
-  cursor: pointer;
-  background-image: url("../images/checkbox.svg"); 
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  transform : scale(0);
-  border-radius: 2px;
-
+.input-check-link{
+  color: var(--primary-iris-color);
 }
 
-.real-checkbox:checked + .fake-checkbox::before {
-  transform : scale(1);
-}
-
-.real-checkbox:checked + .fake-checkbox{
-  border:0;
+.input-check-link:hover{
+  text-decoration: underline;
 }
 
 textarea:focus{
